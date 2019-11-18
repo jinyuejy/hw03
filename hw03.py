@@ -6,7 +6,11 @@ class ready():
         elif a>b:
             l=a//b
             rzi=a-b*l
-            return str(l)+' '+str(rzi)+'/'+str(b)
+            if rzi==0:
+                flag=0
+            else:
+                flag=1
+            return str(l)+' '+(str(rzi)+'/'+str(b))*flag
         else:
             return str(a)+'/'+str(b)
 ## 控制输出
@@ -71,7 +75,7 @@ class fra(ready):
 ## *
     def __truediv__(self,f4):
         return [self.zi*f4.mu,self.mu*f4.zi]
-## /
+## /04
 
 a=input('输入第一个分数：\n')
 b=input('输入第二个分数：\n')
@@ -81,6 +85,7 @@ uu2=uu*uu1
 gg=fra(a).MPR(uu2[0],uu2[1])
 #print(str(uu2[0]/gg)+'/'+str(uu2[1]/gg))
 result=fra(a).com(int(uu2[0]/gg),int(uu2[1]/gg))
-
+print(' ')
+print('结果是')
 print(result)
 
